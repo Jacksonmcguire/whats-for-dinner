@@ -1,10 +1,105 @@
-/* font-family: 'Roboto', sans-serif;
+body {
+  background-image: url(assets/burger-friends.jpg);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  position:relative;
+  font-family: 'Roboto', sans-serif;
+}
 
-COLORS
-teal - #0fb9b1;
-frosted white - rgba(225, 225, 225, .9);
-grey - #95a5a6;
-red - #ee5253
+header {
+  background-color: #0fb9b1;
+  background-size: cover;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
 
-*/
+#add-recipe {
+  border-radius: 4px;
+  border: 0px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  position: inherit;
+  float: right;
+  margin-right: 50px;
+}
+.left-box {
+  width: 420px;
+  background-color: rgba(225, 225, 225, .9);
+  text-align: left;
+  padding-top: 70px;
+  padding-left: 35px;
+  padding-bottom: 50px;
+  margin-top: 40px;
+  margin-left: 100px;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  float: left;
+}
 
+#lets-cook-button {
+  background-color: #0fb9b1;
+  border-radius: 5px;
+  border: 0px;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 15px;
+}
+
+.required {
+  color: #ee5253;
+}
+
+#choose-meal-form {
+  color: black;
+  text-align: left;
+}
+
+#choose-meal-form > label {
+  font-size: 15px;
+}
+
+#right-box {
+  background-color: rgba(225, 225, 225, .9);
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  width: 340px;
+  float: right;
+  margin-top: 40px;
+  margin-right: 80px;
+  padding-top: 80px;
+  padding-right: 70px;
+  padding-left: 45px;
+  padding-bottom: 110px;
+  text-align: center;
+  position:relative;
+}
+
+#right-box-img {
+  height: 150px;
+  width: 120px;
+  padding-left: 25px;
+  align-items: center;
+}
+
+#clear-button {
+  background-color: #95a5a6;
+  color: rgba(225, 225, 225, .9);
+  border: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  font-family: inherit;
+  position: absolute;
+  right: 20;
+  bottom: 20;
+}
