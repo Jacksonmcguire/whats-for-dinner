@@ -5,6 +5,7 @@ body {
   padding: 0;
   position:relative;
   font-family: 'Roboto', sans-serif;
+  flex: initial;
 }
 
 header {
@@ -13,9 +14,10 @@ header {
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-size: 25px;
+  font-size: 35px;
   font-family: 'Roboto', sans-serif;
   width: 100%;
+  font-weight: bolder;
 }
 
 #add-recipe {
@@ -28,17 +30,28 @@ header {
   margin-right: 50px;
 }
 .left-box {
-  width: 420px;
   background-color: rgba(225, 225, 225, .9);
+  flex: 1;
+  width: 200px;
+  height: 400px;
   text-align: left;
-  padding-top: 70px;
+  padding-top: 45px;
   padding-left: 35px;
-  padding-bottom: 50px;
-  margin-top: 40px;
-  margin-left: 100px;
-  font-size: 25px;
+  font-size: 40px;
   font-family: 'Roboto', sans-serif;
-  float: left;
+  margin-top: 45px;
+  margin-left: 130px;
+  padding-bottom: 105px;
+  margin-right: 150px;
+  font-weight: bolder;
+}
+
+.container-1 {
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
 }
 
 #lets-cook-button {
@@ -46,47 +59,54 @@ header {
   border-radius: 5px;
   border: 0px;
   font-family: 'Roboto', sans-serif;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-top: 15px;
+  font-size: 20px;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 25px;
 }
 
 .required {
   color: #ee5253;
+  margin-top: 5px;
 }
 
 #choose-meal-form {
   color: black;
   text-align: left;
+  font-size: 25px;
+  padding: 20px;
+
 }
 
-#choose-meal-form > label {
-  font-size: 15px;
+#side-option {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #right-box {
   background-color: rgba(225, 225, 225, .9);
-  font-size: 25px;
-  font-family: 'Roboto', sans-serif;
-  width: 340px;
-  float: right;
-  margin-top: 40px;
-  margin-right: 80px;
-  padding-top: 80px;
-  padding-right: 70px;
-  padding-left: 45px;
-  padding-bottom: 110px;
+  padding-top: 125px;
+  flex: 1;
+  flex-basis: 2%;
+  height: 400px;
+  margin: 25px;
+  margin-bottom: 0;
+  margin-top: 45px;
+  margin-right: 130px;
+  margin-left: 85px;
   text-align: center;
-  position:relative;
+  padding-bottom: 25px;
+  background-image: url(assets/cookpot.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 175px 200px;
 }
 
 #right-box-img {
   height: 150px;
   width: 120px;
-  padding-left: 25px;
-  align-items: center;
 }
 
 #clear-button {
@@ -102,4 +122,17 @@ header {
   position: absolute;
   right: 20;
   bottom: 20;
+}
+
+#choose-meal-form > label {
+  padding-top: 15px;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#form-question {
+  margin-bottom: 45px;
+  font-family: inherit;
+  font-size: 40px;
+  font-weight: bolder;
 }
