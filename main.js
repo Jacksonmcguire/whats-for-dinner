@@ -67,7 +67,7 @@ function changeRightHtml(mealFormLabel) {
 
 function addToFavorites(event) {
   if(event.target.closest = favButton) {
-  if(favoriteRecipes.indexOf(rightBox.querySelector('p').innerText) < 0) {
+  if(favoriteRecipes.indexOf(rightBox.querySelector('p').innerText.replace('!', '.')) < 0) {
   favoriteRecipes.push(rightBox.querySelector('p').innerText.replace('!', '.'));
   }
   }
@@ -97,7 +97,6 @@ function goHome() {
 function removeRecipe(event) {
   for(var i = 0; i < favoritesView.querySelectorAll('li').length; i++) {
     if(event.target === favoritesView.querySelectorAll('li')[i]) {
-      debugger;
       favoritesList.removeChild(favoritesView.querySelectorAll('li')[i]);
     }
   }
