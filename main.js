@@ -1,6 +1,7 @@
 var sides = ['Miso Glazed Carrots', 'Coleslaw', 'Garden Salad', 'Crispy Potatoes', 'Sweet Potato Tots', 'Coconut Rice', 'Caeser Salad', 'Shrimp Summer Rolls', 'Garlic Butter Mushrooms', 'Hush Puppies'];
 var mains = ['Spaghetti and Meatballs', 'Pineapple Chicken', 'Shakshuka', 'Thai Yellow Curry', 'Bibimbap', 'Chicken Parmesean', 'Butternut Squash Soup', 'BBQ Chicken Burgers', 'Ramen', 'Empanadas', 'Chicken Fried Rice', 'Sheet Pan Fajitas', 'Margarita Pizza'];
 var desserts = ['Apple Pie', 'Lemon Meringue Pie', 'Black Forest Cake', 'Banana Bread', 'Peach Cobbler', 'Cheesecake', 'Funfetti Cake', 'Baklava', 'Flan', 'Macarons', 'Macaroons', 'Chocolate Cupcakes', 'Pavlova', 'Pumpkin Pie', 'Key Lime Pie', 'Tart Tatin', 'Croissants', 'Eclairs'];
+var favoriteRecipes = [];
 
 var mealForm = document.querySelector('#choose-meal-form');
 var letsCookButton = document.querySelector('#lets-cook-button');
@@ -9,15 +10,21 @@ var mealFormRadio = mealForm.querySelectorAll('input');
 var leftBox = document.querySelector('.left-box');
 var rightBox = document.querySelector('.right-box');
 var clearButton = document.querySelector('#clear-button');
-var favoritesView = document.querySelector('#view-favorites');
-var bothBoxes = document.querySelector('.boxes');
+var favoritesView = document.querySelector('#favorite-view');
 var container = document.querySelector('.container-1');
 var body = document.querySelector('body');
 var homeButton = document.querySelector('#home-button');
+var favoritesList = document.querySelector('.favorite-list');
+var viewFavoritesButton = document.querySelector('#view-favorites');
+var listItems = favoritesList.querySelectorAll('li');
+var currentRecipe;
 clearButton.classList.toggle('hidden');
 
 letsCookButton.addEventListener('click', showMeal);
 rightBox.addEventListener('click', addToFavorites);
+viewFavoritesButton.addEventListener('click', showFavorites);
+homeButton.addEventListener('click', goHome);
+favoritesList.addEventListener('click', removeRecipe);
 
 function showMeal(event) {
   var h1; var p;
@@ -57,3 +64,41 @@ function changeRightHtml(mealFormLabel) {
     <button id="favorite-button">Add to Favorites</button>`;
   }
 };
+
+function addToFavorites(event) {
+  if(event.target.closest = favButton) {
+  if(favoriteRecipes.indexOf(rightBox.querySelector('p').innerText) < 0) {
+  favoriteRecipes.push(rightBox.querySelector('p').innerText.replace('!', '.'));
+  }
+  }
+}
+
+function showFavorites() {
+  homeButton.classList.remove('hidden');
+  leftBox.classList.add('hidden');
+  rightBox.classList.add('hidden');
+  favoritesView.classList.remove('hidden');
+  viewFavoritesButton.classList.toggle('hidden');
+  for(var i = 0; i < favoriteRecipes.length; i++) {
+    var li = document.createElement('li');
+    favoritesList.appendChild(li);
+    li.innerText = favoriteRecipes[i];
+    }
+    }
+
+function goHome() {
+  homeButton.classList.toggle('hidden');
+  leftBox.classList.toggle('hidden');
+  rightBox.classList.toggle('hidden');
+  favoritesView.classList.toggle('hidden');
+  viewFavoritesButton.classList.toggle('hidden');
+}
+
+function removeRecipe(event) {
+  for(var i = 0; i < favoritesView.querySelectorAll('li').length; i++) {
+    if(event.target === favoritesView.querySelectorAll('li')[i]) {
+      debugger;
+      favoritesList.removeChild(favoritesView.querySelectorAll('li')[i]);
+    }
+  }
+}
