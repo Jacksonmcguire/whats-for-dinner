@@ -67,8 +67,10 @@ function changeRightHtml(mealFormLabel) {
 
 function addToFavorites(event) {
   if(event.target.closest = favButton) {
-  if(favoriteRecipes.indexOf(rightBox.querySelector('p').innerText) < 0) {
+  if(favoriteRecipes.indexOf(rightBox.querySelector('p').innerText.replace('!', '.')) < 0) {
   favoriteRecipes.push(rightBox.querySelector('p').innerText.replace('!', '.'));
+  JSON.stringify(favoriteRecipes);
+  window.localStorage.setItem('favoriteRecipes', favoriteRecipes);
   }
   }
 }
@@ -79,12 +81,16 @@ function showFavorites() {
   rightBox.classList.add('hidden');
   favoritesView.classList.remove('hidden');
   viewFavoritesButton.classList.toggle('hidden');
+  if(favoriteRecipes.length > 0) {
   for(var i = 0; i < favoriteRecipes.length; i++) {
     var li = document.createElement('li');
     favoritesList.appendChild(li);
     li.innerText = favoriteRecipes[i];
     }
-    }
+  } else {
+    addToLocalStorage();
+  }
+  }
 
 function goHome() {
   homeButton.classList.toggle('hidden');
@@ -97,8 +103,19 @@ function goHome() {
 function removeRecipe(event) {
   for(var i = 0; i < favoritesView.querySelectorAll('li').length; i++) {
     if(event.target === favoritesView.querySelectorAll('li')[i]) {
-      debugger;
       favoritesList.removeChild(favoritesView.querySelectorAll('li')[i]);
     }
   }
 }
+
+function addToLocalStorage(event) {
+  var savedData = localStorage.getItem('favoriteRecipes');
+  var localRecipes = savedData.split(',');
+  for(var i = 0; i < localRecipes.length; i++) {
+    var li = document.createElement('li');
+    if(favoritesList.innerText.includes(localRecipes[i]) === false) {
+      favoritesList.appendChild(li);
+      li.innerText = localRecipes[i];
+    }
+    }
+  }
